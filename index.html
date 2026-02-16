@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Все наши проекты</title>
+    <style>
+        /* Сброс и базовые стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: #0a0a0a; /* очень тёмный, почти чёрный */
+            /* Белая клетка с минимальной прозрачностью */
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 60px 60px; /* клетка чуть мельче */
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* Контейнер с анимацией появления */
+        .container {
+            max-width: 600px; /* уменьшен */
+            width: 100%;
+            background-color: transparent;
+            border-radius: 30px;
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px; /* уменьшен */
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Заголовок (уменьшен) */
+        h1 {
+            color: white;
+            font-size: 2.4rem; /* уменьшен */
+            font-weight: 900;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            word-break: break-word;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards 0.2s;
+        }
+
+        /* Стили для кнопок-ссылок (уменьшены) */
+        .button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(145deg, #0f0f1e, #05050c); /* очень тёмный фон кнопок */
+            color: white;
+            font-weight: 800;
+            font-size: 1.3rem; /* уменьшен */
+            text-decoration: none;
+            text-align: center;
+            padding: 12px 14px; /* уменьшен */
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 6px 0 #020204; /* плоская тень, уменьшена */
+            transition: all 0.1s ease;
+            line-height: 1.3;
+            word-break: break-word;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Индивидуальные задержки для кнопок (4 штуки) */
+        .button:nth-of-type(1) { animation-delay: 0.3s; }
+        .button:nth-of-type(2) { animation-delay: 0.4s; }
+        .button:nth-of-type(3) { animation-delay: 0.5s; }
+        .button:nth-of-type(4) { animation-delay: 0.6s; }
+
+        /* Эффект наведения */
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 0 #020204;
+            border-color: rgba(255, 255, 255, 0.3);
+            background: linear-gradient(145deg, #14142a, #080812);
+        }
+
+        /* Эффект нажатия */
+        .button:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #020204;
+        }
+
+        /* Для длинного текста в третьей кнопке (чуть меньше шрифт) */
+        .button.long-text {
+            font-size: 1.1rem;
+        }
+
+        /* Футер с прозрачностью (уменьшен) */
+        .footer {
+            margin-top: 30px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.85rem; /* уменьшен */
+            text-align: center;
+            line-height: 1.5;
+            max-width: 600px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards 0.9s;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        /* Ключевые кадры анимации */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Адаптация для мобильных */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+            .button {
+                font-size: 1.1rem;
+                padding: 10px 12px;
+            }
+            .button.long-text {
+                font-size: 1rem;
+            }
+            body {
+                background-size: 40px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ВСЕ НАШИ ПРОЕКТЫ</h1>
+
+        <!-- 1️⃣ НАШ КАНАЛ -->
+        <a href="https://t.me/bespredel_team" class="button" target="_blank" rel="noopener noreferrer">
+            1️⃣ НАШ КАНАЛ
+        </a>
+
+        <!-- 2️⃣ НАШ БОТ -->
+        <a href="https://t.me/BespredelHack1w_Bot" class="button" target="_blank" rel="noopener noreferrer">
+            2️⃣ НАШ БОТ
+        </a>
+
+        <!-- 3️⃣ СПИСОК КАЗИНО -->
+        <a href="https://t.me/bespredel_team/34" class="button long-text" target="_blank" rel="noopener noreferrer">
+            3️⃣ СПИСОК КАЗИНО, КОТОРЫЕ МЫ ОБРАБАТЫВАЕМ
+        </a>
+
+        <!-- 4️⃣ СВЯЗЬ -->
+        <a href="https://t.me/bespredel_delaet" class="button" target="_blank" rel="noopener noreferrer">
+            4️⃣ СВЯЗЬ
+        </a>
+    </div>
+
+    <div class="footer">
+        <p>Автор: TG - @bespredel_delaet</p>
+        <p>Вся информация используется только в развлекательных целях, автор не призывает никого к выполнению действий</p>
+    </div>
+</body>
+</html>
